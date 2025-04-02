@@ -28,7 +28,7 @@
 apt update -y && apt upgrade -y
 git clone https://github.com/evilfeonix/CamHack.git
 cd CamHack
-python3 CamHack
+python3 CamHack.py
 ```
 
 ## **Disclaimer & Important note**
